@@ -44,3 +44,39 @@ var minDeletionSize = function(A) {
     
 };
 ```
+
+### Leetcode 63 - Unique Paths II
+Solved by: Daniel Mai
+JavaScript - Passed half Leetcode tests, exceeding time limit for 
+large grids. Needs to optimize recursion calls by using dynamic programming
+
+```javascript
+/**
+ * @param {number[][]} obstacleGrid
+ * @return {number}
+ */
+var uniquePathsWithObstacles = function(grid) {
+    const m = grid.length;
+    const n = grid[0].length;
+    
+    let uPaths = 0;
+    
+    function move(row, col){
+        if(row === m || col === n) return; // out of bound
+        if(grid[row][col] === 1) return; // hit an obstable
+        
+        // reach destination
+        if(row === m - 1 && col === n - 1){
+            uPaths++;
+            return;
+        }        
+        
+       
+        move(row + 1, col); // move down
+        move(row, col + 1); // move right
+        
+    }
+    move(0, 0);
+    return uPaths;    
+};
+```
