@@ -2,7 +2,7 @@
 Solved by: Daniel Mai
 JavaScript - Passed all Leetcode tests
 
-```
+```javascript
 /**
  * @param {string[]} A
  * @return {number}
